@@ -1,41 +1,167 @@
 doctype html
-head
-	title [TS] Server #6 | NA
-	link(rel="icon", href="https://i.imgur.com/cUBD1EE.png", type="image/x-icon")
-	meta(property='og:title' content='The Skeld | Crew Link Server #6 - NA')
-	meta(property='og:description' content='Voice server for Among Us proximity chat - Hosted by The Skeld / My Name is Tito#8244')
-	meta(property='og:image' content='https://i.imgur.com/cUBD1EE.png')
-	style.
-		body {
-		background-color: #23272a;
-		color: white;
-		font-family: sans-serif;
-		text-align: center;
-		}
-		img {
-		height: 128px;
-		width: 128px;
-		margin: 32px auto;
-		display: block;
-		}
-		a {
-			text-decoration: none;
-			color: #3498db
-		}
-		a:hover {
-			text-decoration: underline;
-		}
-img(src="https://i.imgur.com/cUBD1EE.png")
-h1 The Skeld's CrewLink Server #6 | NA
-p There #{connectionCount === 1 ? 'is' : 'are'} currently #{connectionCount} user#{connectionCount === 1 ? '' : 's'} connected to this Crew Link Server.
-p 
-	| Join Our Discord For Voice Proximity Lobbies! 
-	a(href="https://discord.gg/XSt4AH79MT", target="_blank") Click here to join
-	| .
-p 
-	| Hosted by 
-	a(href="https://discordapp.com/users/611746802122620937", target="_blank") My Name is Tito#8244
-	|
-
-
-
+html
+  head
+    title [TS] Server #6 | NA
+    link(rel="icon", href="https://i.imgur.com/cUBD1EE.png", type="image/x-icon")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(property='og:title' content='The Skeld | Crew Link Server #6 - NA')
+    meta(property='og:description' content='Voice server for Among Us proximity chat - Hosted by The Skeld / My Name is Tito#8244')
+    meta(property='og:image' content='https://i.imgur.com/cUBD1EE.png')
+    style.
+      @font-face {
+      font-family: 'amongus';
+      src: URL('https://cdn.glitch.com/aee4830c-69c1-45ce-b954-54174e6b39ad%2Famongus.ttf?v=1607382044419') format('truetype');
+      }
+      body {
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      height: 100%;
+      }
+      img {
+      height: 128px;
+      width: 128px;
+      margin: auto;
+      margin-top: 0;
+      display: block;
+      
+      }
+      a {
+      text-decoration: none;
+      color: #3498db
+      }
+      a:hover {
+      text-decoration: underline;
+      }
+      .holder {
+      background-color: #23272a;
+      border-radius: 5px;
+      color: white;
+      padding: 5px;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      }
+      .announcement {
+      background-color: #23272a;
+      border-radius: 5px;
+      color: white;
+      padding: 5px;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 16px;
+      }
+      .online {
+      color: chartreuse;
+      }
+      @keyframes slideleft {
+      from {
+      background-position: 0%;
+      }
+      to {
+      background-position: 90000%;
+      }
+      }
+      @-webkit-keyframes slideleft {
+      from {
+      background-position: 0%;
+      }
+      to {
+      background-position: 90000%;
+      }
+      }
+      .bg {
+      background-image: url('https://static.lermatroid.com/img/spacebg.jpg');
+      background-repeat: repeat-x;
+      animation: slideleft 800s infinite linear;
+      background-size: zoom;
+      -webkit-animation: slideleft 800s infinite linear;
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: 10px;
+      }
+      input {
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      border-radius: 2px;
+      }
+      .banner {
+      height: 30px;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 30px;
+      line-height: 30px;
+      }
+      .banner a {
+      text-decoration: underline;
+      }
+      .hidden {
+      display: none;
+      }
+  body
+    #view.bg
+      img#i(src='https://i.imgur.com/cUBD1EE.png' height='256' width='256')
+      b
+      h1#t(style='margin-top: 0; margin-bottom: 15px; font-family: amongus; font-size: 75px;')
+        | Server 6
+      p#d(style='margin-top: 0; font-family: amongus; font-size: 25px;')
+        | North America
+      p.online There #{connectionCount === 1 ? 'is' : 'are'} currently #{connectionCount} user#{connectionCount === 1 ? '' : 's'} connected to this Crew Link Server.
+      .announcement
+        b
+          p Discord!
+        p
+          | Join our Discord today, 
+          a(href="https://discord.gg/XSt4AH79MT", target="") https://discord.gg/XSt4AH79MT
+          |  
+        p For Among Us Lobbies, either with or without Voice Proximity (Crew Link)
+      #tutorial.holder
+        p
+          b How To Use:
+        p
+          | 1. Download and install the latest version of CrewLink 
+        p from 
+          a(href='https://github.com/ottomated/CrewLink/releases') The Official Github
+          |                 (If
+          |                 you
+          |                 have not already)
+        p 2. Click on the settings icon in the top left of CrewLink
+        p 3. Scroll down to the section named "Voice Server"
+        p#r 4. In the field, enter:
+        input#url(style='text-align: center; margin: 5px;' type='text' value='https://s5.theskeld.xyz' readonly='')
+        
+        p
+          | 5. Click the back button to got back to the CrewLink main menu and press ctrl + r
+        p
+          b Thats It! Enjoy Playing!
+        #other
+          i
+            p(style='border: white solid 3px; border-radius: 2px; padding-top: 5px; padding-bottom: 4px;')
+              | Note:
+              |                         Everyone must be on the same Voice Server.
+          
+          hr(style='height:2px;border-width:0;color:gray;background-color:gray;max-width:90%;')
+          p Need help?
+          p 
+            |                         Feel free to PM me on Discord (
+            a(href="", target="") @My Name is Tito#8244
+            |) if you need a hand with anything :)
+          hr(style='height:2px;border-width:0;color:gray;background-color:gray;max-width:90%;margin-bottom:25px;')
+      sub(style='font-size: 7px; margin: 1px;')
+        | Site Design & Server Modifications By 
+        a(href='https://lermatroid.com') Lermatroid
+        br
+      sub(style='font-size: 7px; margin: 1px;')
+        a(href='https://github.com/ottomated/CrewLink-server')
+          | CrewLink
+          | Server
+        |  By 
+        a(href='https://ottomated.net/') Ottomated
+        br
+      sub(style='font-size: 7px; margin: 1px;') Please Do Not Copy These Works Without Permission
